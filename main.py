@@ -17,17 +17,11 @@ def data_parser(blog_data: str) -> str:
     img_tag = image_box.find("img") # type: ignore
     return img_tag.attrs["data-lazy-src"]
 
-from fastapi import FastAPI
 
-app = FastAPI()
+url = "https://blog.naver.com/PostList.naver?blogId=naramf&categoryNo=25"
+response = get_requests(url)
+image_url = data_parser(response)
+print(image_url)
 
-@app.get("/")
-async def read_root():
-    return "This is root path from MyAPI"
-
-
-# if __name__ == "__main__":
-#     url = "https://blog.naver.com/PostList.naver?blogId=naramf&categoryNo=25"
-#     response = get_requests(url)
-#     image_url = data_parser(response)
-#     print(image_url)
+with open("index.html", "w") as f:
+    f.write(f"<p>{image_url}</p>")
