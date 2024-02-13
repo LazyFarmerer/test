@@ -24,4 +24,4 @@ image_url = data_parser(response)
 print(image_url)
 
 with open("index.html", "w") as f:
-    f.write(f"<p>{image_url}</p>")
+    f.write(f"{image_url}")
