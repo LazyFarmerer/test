@@ -23,7 +23,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Python script # 파이썬 코드 실행
       run: |
-        test.py
+        python test.py
     - name: Commit updated index.html # 변경된 index.html 파일 커밋
       uses: EndBug/add-and-commit@v7
       with:
