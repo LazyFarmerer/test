@@ -78,5 +78,5 @@ def get_blog_data():
         media_type="application/json; charset=utf-8"
     )
 
-if __name__ == '__main__':
-    uvicorn.run("test:app", reload=True)
+# if __name__ == '__main__':
+#     uvicorn.run("test:app", reload=True)
