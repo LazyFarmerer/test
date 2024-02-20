@@ -63,7 +63,7 @@ def test():
 @app.get("/test2")
 def test2():
     return JSONResponse(
-        content=str(datetime),
+        content=str(datetime.now()),
         media_type="application/json; charset=utf-8"
     )
 
@@ -79,4 +79,4 @@ def get_blog_data():
     )
 
 if __name__ == '__main__':
-    uvicorn.run("main:app", reload=True)
+    uvicorn.run("test:app", reload=True)
